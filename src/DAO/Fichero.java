@@ -2,7 +2,6 @@ package DAO;
 
 import java.io.FileWriter;
 
-import Modelo.Cliente;
 import Modelo.Empleado;
 
 public class Fichero {
@@ -10,18 +9,24 @@ public class Fichero {
 	
 	public static void main(String[] args) {
 		
-		Empleado empleado = new Empleado(1, "Ricardo", "Diaz");
-		Cliente cliente= new Cliente(1, empleado.getCodEmpleado(), "Ricardo");
 		
-		String texto= empleado.toString();
-		String ruta= "/Users/J/Desktop/java/";
-		String empleados= "empleados.txt";
-		String clienes= "clientes.txt";
-		String pedidos= "pedidos.txt";
+		final String RUTA= "/Users/curso/Desktop/";
+		final String EMPLEADOS= "empleados.txt";
+		final String CLIENTES= "clientes.txt";
+		final String PEDIDOS= "pedidos.txt";
+		
+		
+		
+		Empleado Empleado = new Empleado(1, "Ricardo", "Diaz");
+		//Cliente cliente= new Cliente(1, empleado.getCodEmpleado(), "Ricardo");
+		
+		String texto= Empleado.toString();
+
+	
 		
 		
 		try {
-			FileWriter archivo= new FileWriter(ruta+empleados);
+			FileWriter archivo= new FileWriter(RUTA+EMPLEADOS);
 			archivo.write(texto);
 			System.out.println("Archivo escrito");
 			archivo.close();
